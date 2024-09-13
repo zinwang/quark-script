@@ -54,8 +54,8 @@ for ldExternalCode in quarkResult.behaviorOccurList:
         ]
 
     if not quarkResult.findMethodInCaller(callerMethod, targetMethod):
-    print(f"Method: {targetMethod[1]} not found!")
-    print(f"CWE-94 is detected in {SAMPLE_PATH}")
+        print(f"Method: {targetMethod[1]} not found!")
+        print(f"CWE-94 is detected in {SAMPLE_PATH}")
 ```
 
 ## Quark Rule: loadExternalCode.json
