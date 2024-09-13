@@ -1,6 +1,4 @@
----
-title: Detect CWE-295 in Android Application (InsecureShop.apk)
----
+# Detect CWE-295 in Android Application (InsecureShop.apk)
 
 This scenario seeks to find **Improper Certificate Validation**. See
 [CWE-295](https://cwe.mitre.org/data/definitions/295.html) for more
@@ -24,7 +22,7 @@ the superclass list of the method's caller class.
 Finally, we check the `Landroid/webkit/WebViewClient;` is on the
 superclass list. If **YES**, that may cause CWE-295 vulnerability.
 
-# Quark Script CWE-295.py
+## Quark Script CWE-295.py
 
 ``` python
 from quark.script import findMethodInAPK
@@ -49,7 +47,7 @@ for sslProceedCaller in findMethodInAPK(SAMPLE_PATH, TARGET_METHOD):
         print(f"CWE-295 is detected in method, {sslProceedCaller.fullName}")
 ```
 
-# Quark Script Result
+## Quark Script Result
 
 ``` TEXT
 $　python3 CWE-295.py
