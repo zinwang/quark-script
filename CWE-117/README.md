@@ -1,6 +1,5 @@
----
-title: Detect CWE-117 in Android Application (allsafe.apk)
----
+# Detect CWE-117 in Android Application (allsafe.apk)
+
 
 This scenario seeks to find **Improper Output Neutralization for Logs**.
 See [CWE-117](https://cwe.mitre.org/data/definitions/117.html) for more
@@ -20,7 +19,7 @@ APIs for neutralization, such as `escape`, `replace`, `format`, and
 If the answer is **YES**, that may result in secret context leakage into
 the log file, or the attacker may perform log forging attacks.
 
-# Quark Script CWE-117.py
+## Quark Script CWE-117.py
 
 ``` python
 from quark.script import Rule, runQuarkAnalysis
@@ -47,7 +46,7 @@ for logOutputBehavior in quarkResult.behaviorOccurList:
         print(f"CWE-117 is detected in method, {caller}")
 ```
 
-# Quark Rule: writeContentToLog.json
+## Quark Rule: writeContentToLog.json
 
 ``` json
 {
@@ -70,7 +69,7 @@ for logOutputBehavior in quarkResult.behaviorOccurList:
 }
 ```
 
-# Quark Script Result
+## Quark Script Result
 
 -   **allsafe.apk**
 
