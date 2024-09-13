@@ -54,9 +54,9 @@ STRING_MATCHING_API = [
     ["Ljava/lang/String;", "indexOf", "(Ljava/lang/String;)I"],
     ["Ljava/lang/String;", "matches", "(Ljava/lang/String;)Z"],
     [
-    "Ljava/lang/String;",
-    "replaceAll",
-    "(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;",
+        "Ljava/lang/String;",
+        "replaceAll",
+        "(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;",
     ],
 ]
 
@@ -68,19 +68,19 @@ for accessExternalDir in quarkResult.behaviorOccurList:
     filePath = accessExternalDir.secondAPI.getArguments()[2]
 
     if quarkResult.isHardcoded(filePath):
-    continue
+        continue
 
     caller = accessExternalDir.methodCaller
     strMatchingAPIs = [
-    api
-    for api in STRING_MATCHING_API
-    if quarkResult.findMethodInCaller(caller, api)
+        api
+        for api in STRING_MATCHING_API
+        if quarkResult.findMethodInCaller(caller, api)
     ]
 
     if not strMatchingAPIs:
-    print(f"CWE-23 is detected in method, {caller.fullName}")
+        print(f"CWE-23 is detected in method, {caller.fullName}")
     elif strMatchingAPIs.find("..") == -1:
-    print(f"CWE-23 is detected in method, {caller.fullName}")
+        print(f"CWE-23 is detected in method, {caller.fullName}")
 ```
 
 ## Quark Rule: accessFileInExternalDir.json
