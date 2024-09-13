@@ -17,7 +17,7 @@ for putString in fridaResult.behaviorOccurList:
     secondParam = putString.secondAPI.getArguments()
 
     if firstParam in ["email", "password"] and secondParam == checkClearText(
-        secondParam
+            secondParam
     ):
 
         print(

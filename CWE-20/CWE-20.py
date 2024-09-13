@@ -12,6 +12,6 @@ for openUrl in result.behaviorOccurList:
     calledMethods = openUrl.getMethodsInArgs()
 
     if not any(
-        method.methodName in VALIDATE_METHODS for method in calledMethods
+            method.methodName in VALIDATE_METHODS for method in calledMethods
     ):
         print(f"CWE-20 is detected in method, {openUrl.methodCaller.fullName}")
